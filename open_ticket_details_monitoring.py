@@ -10,10 +10,10 @@ def open_ticket_details():
     today_date_time = datetime.datetime.now().date()
 
     mydb = mysql.connector.connect(
-        host = "otrs.futurenet.in",
-        user = "readuser2",
-        passwd = "6FbUDa5VM",
-        database = "otrs5",
+        host = "*****",
+        user = "*****",
+        passwd = "*****",
+        database = "****",
         charset = "utf8"
     )
 
@@ -164,18 +164,18 @@ def open_ticket_details():
 
         subject  = "Monitoring queue open ticket details on "+ str(today_date_time) 
         msg = MIMEMultipart('alternative')
-        to = 'rims.l1@futurenet.in'
-        #cc = 'rims.tl@futurenet.in,rims@futurenet.in'
+        to = '****@futurenet.in'
+        #cc = '*****@futurenet.in,*****@futurenet.in'
         msg['Subject'] = subject 
         msg['to'] = to
         #msg['cc'] = cc
         #rcpt = cc.split(",") + to.split(",")
         part1 = MIMEText(html_content, 'html','utf-8')
         msg.attach(part1)
-        smtp_server = smtplib.SMTP('webmail.futurenet.in',25)
+        smtp_server = smtplib.SMTP('host',portno)
         smtp_server.starttls()
-        smtp_server.login('otrs.report@futurenet.in','JwD@!3j@4HQB!@')
-        smtp_server.sendmail('otrs.report@futurenet.in', to, msg.as_string())
+        smtp_server.login('*****@futurenet.in','*****')
+        smtp_server.sendmail('from', to, msg.as_string())
         smtp_server.quit()
 
 if __name__ == "__main__":
