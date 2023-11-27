@@ -25,13 +25,13 @@ def empty_note_list():
     
     mydb = mysql.connector.connect(
     
-    host="otrs.futurenet.in",
+    host="*****",
     
-    user="readuser2",
+    user="*****",
     
-    passwd="6FbUDa5VM",
+    passwd="*****",
     
-    database="otrs5",
+    database="*****",
     
     charset="utf8"
     
@@ -231,9 +231,9 @@ ORDER BY TICKET_ID DESC;
     
     msg = MIMEMultipart('alternative')
     
-    to = 'rims.l1@futurenet.in'
+    to = '****@futurenet.in'
     
-    cc = 'rims.tl@futurenet.in,rims@futurenet.in'
+    cc = '****@futurenet.in,****@futurenet.in'
     
     msg['Subject'] = subject 
     
@@ -247,13 +247,13 @@ ORDER BY TICKET_ID DESC;
     
     msg.attach(part1)
     
-    smtp_server = smtplib.SMTP('webmail.futurenet.in',25)
+    smtp_server = smtplib.SMTP('host',portno)
     
     smtp_server.starttls()
     
-    smtp_server.login('otrs.report@futurenet.in','JwD@!3j@4HQB!@')
+    smtp_server.login('****@futurenet.in','********')
     
-    smtp_server.sendmail('otrs.report@futurenet.in',rcpt,msg.as_string())
+    smtp_server.sendmail('*****@futurenet.in',rcpt,msg.as_string())
     
     smtp_server.quit()
     
